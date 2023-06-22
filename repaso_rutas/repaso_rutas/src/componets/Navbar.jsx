@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
   return (
     <div>
-      <article className="max-w-[1200px] mx-auto flex justify-between">
+      <article className="max-w-[1200px] mx-auto flex justify-between py-4">
         <span>Logo</span>
         <ul className="flex gap-4">
             <li>
