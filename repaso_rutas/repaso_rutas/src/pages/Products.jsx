@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Products = () => {
 
@@ -15,10 +16,8 @@ const Products = () => {
     fetchProducts()
   }, [])
 
-  console.log(dataProductos)
-
   return (
-    <div>
+    <div className="max-w-[1200px] mx-auto">
 
       <form action="">
         <input type="text" placeholder="Busqueda de productos..." className="border-2 py-2 px-3 w-64" />
@@ -26,7 +25,7 @@ const Products = () => {
       
       <article className="flex flex-wrap justify-center gap-4 py-4">
         {dataProductos && dataProductos.length > 0 && dataProductos.map((producto) => (
-          <div key={producto.id} className="grid grid-cols-1 grid-rows-2 border-2 rounded-lg w-64 max-w-[16rem] h-[20rem]">
+          <Link state={{logged: true}} to={`/dashboard/product/${producto.id}`} key={producto.id} className="grid grid-cols-1 grid-rows-2 border-2 rounded-lg w-64 max-w-[16rem] h-[20rem]">
             <section className="w-full h-full">
               <img src={producto.image} alt="imagen" className="w-full h-full object-contain" />
             </section>
@@ -34,7 +33,7 @@ const Products = () => {
               <h1 className="text-lg font-bold line-clamp-2">{producto.title}</h1>
               <p className="line-clamp-3">{producto.description}</p>
             </section>  
-          </div>
+          </Link>
         ))}
 
       </article>

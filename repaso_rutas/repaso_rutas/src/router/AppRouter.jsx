@@ -7,6 +7,7 @@ import PrivateRouter from "./PrivateRouter"
 import Dashboard from "../pages/Dashboard"
 import Products from "../pages/Products"
 import Cart from "../pages/Cart"
+import DetailProduct from "../pages/DetailProduct"
 
 const AppRouter = () => {
     return (
@@ -19,7 +20,8 @@ const AppRouter = () => {
             
             <Route path="/dashboard" element={<PrivateRouter><Dashboard/></PrivateRouter>}>
                 <Route index element={<h1>Home</h1>} />
-                <Route path="products" element={<Products />} />
+                <Route path="products" element={<Products />}/>
+                <Route path="product/:idProducto" element={<DetailProduct />} />
                 <Route path="cart" element={<Cart />} />
             </Route>
         </Routes>
