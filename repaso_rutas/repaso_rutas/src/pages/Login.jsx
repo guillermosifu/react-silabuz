@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { ContextProvider } from "../context/ContextApp"
-import Navbar from "../componets/Navbar"
+import { useLocation } from "react-router-dom"
+import Swal from "sweetalert2"
 
 const Login = () => {
   const {dataLocal, setDataUsuario} = useContext(ContextProvider)
@@ -20,6 +21,12 @@ const Login = () => {
 
     if (buscarUsuario) {
       setDataUsuario(buscarUsuario)
+    } else {
+      Swal.fire(
+        '¡No se pudo iniciar sesión!',
+        'Correo o Contraseña incorrecta',
+        'error'
+      )
     }
   }
 

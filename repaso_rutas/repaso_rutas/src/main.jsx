@@ -8,9 +8,9 @@ import ContextApp from './context/ContextApp.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <ContextApp>
-            <React.StrictMode>
-              <App />
-            </React.StrictMode>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
     </ContextApp>
   </BrowserRouter>
 )

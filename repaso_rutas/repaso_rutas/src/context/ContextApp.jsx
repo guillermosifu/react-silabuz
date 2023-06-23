@@ -10,8 +10,13 @@ const ContextApp = ({children}) => {
 
     const dataLocal = bdUsuarios ? JSON.parse(bdUsuarios) : [] 
 
+    console.log(dataUsuario)
+    console.log(Object.values(dataUsuario))
+
     useEffect(() => {
-        console.log("validado!")
+      if (Object.values(dataUsuario).length > 0) {
+        navigate('/dashboard', {state: {logged: true}, replace: true})
+      }
     }, [dataUsuario])
 
   return (
