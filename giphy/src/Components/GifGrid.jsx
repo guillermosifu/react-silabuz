@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react";
+import {GetApi} from "../Helpers/GetApi"
 import { GifItem } from "./GifItem";
-import { GetApi } from "../Helpers/GetApi";
-
-import React from "react";
 
 export const GifGrid = ({ category }) => {
   const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoding, setIsLoding] = useState(true);
 
   useEffect(() => {
     GetApi(category).then((newImages) => setImages(newImages));
-    setIsLoading(false);
+    setIsLoding(false)
   }, []);
 
   return (
     <>
       <h3>{category}</h3>
-      {isLoading && <h2>Cargando...</h2>}
-      <div>
+      {
+        isLoding && (<h2>Cargando...</h2>)
+      }
+      <div className="card-grid">
         {images.map((image) => (
-          <GifItem Key={image.id} {...image} />
+          <GifItem key={image.id}
+                  {...image}
+          />
         ))}
       </div>
     </>
