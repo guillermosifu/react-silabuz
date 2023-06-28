@@ -21,7 +21,7 @@ const User = () => {
     setUSerDetail(data);
   };
 
-  const fecthRepos = async () => {
+  const fetchRepos = async () => {
     const data = await getRepos(username);
     setRepos(data);
   };
@@ -31,7 +31,7 @@ const User = () => {
   }, []);
 
   useEffect(() => {
-    fecthRepos();
+    fetchRepos();
   }, []);
 
   return (
