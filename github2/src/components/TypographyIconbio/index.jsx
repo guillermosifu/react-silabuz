@@ -1,0 +1,23 @@
+import BusinessRoundedIcon from "@mui/icons-material/BusinessRounded";
+import FmdGoodRoundedIcon from "@mui/icons-material/FmdGoodRounded";
+import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
+import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import FlutterDashRoundedIcon from "@mui/icons-material/FlutterDashRounded";
+import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import { Typography } from "@mui/material";
+
+const TypographyIconBio = ({text,icon}) => {
+  const icons = {
+    company: <BusinessRoundedIcon />,
+    email: <EmailRoundedIcon />,
+    blog: <LanguageRoundedIcon />,
+    social: <FlutterDashRoundedIcon />,
+    people: <PeopleAltOutlinedIcon />,
+    location: <FmdGoodRoundedIcon />,
+  };
+
+  return (
+  <Typography>{icons[icon]}{text}</Typography>)
+};
+
+export default TypographyIconBio;
