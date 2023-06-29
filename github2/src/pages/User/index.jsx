@@ -9,7 +9,8 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { TypographyIconBio } from "../../components/TypographyIconbio";
+import { TypographyIconBio } from "../../components";
+
 
 const User = () => {
   const { username } = useParams();

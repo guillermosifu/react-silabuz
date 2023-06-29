@@ -27,7 +27,7 @@ const Search = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Link >
+          <Link to={`/users/${username}`} >
             <Button variant="contained" fullWidth>
               Buscar
             </Button>

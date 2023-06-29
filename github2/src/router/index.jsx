@@ -1,7 +1,5 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom";
-import Search from "../pages/Search";
-import User from "../pages/User";
-
+import{SearchView,UsersView,UserView } from "../pages"
 
 
 
@@ -10,8 +8,9 @@ const Router =()=>{
     return(
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Search/>}/>
-            <Route path="/user" element={<User/>}/>
+            <Route path="/" element={<SearchView/>}/>
+            <Route path="/users/:username" element={<UsersView/>}/>
+            
           
         </Routes>
         </BrowserRouter>
