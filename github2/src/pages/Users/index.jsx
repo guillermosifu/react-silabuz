@@ -1,42 +1,42 @@
-import{useState,useEffect} from"react"
-import { useParams,useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { SearchUsers } from "../../services";
-import{Box,Container,Typography} from "@mui/material"
+import { Box, Container, Typography } from "@mui/material";
+import { CustomCard } from "../../components";
 
+const Users = () => {
+  const { username } = useParams();
+  const [usersList, setUsersList] = useState([]);
 
-const Users=()=>{
-    const{username}=useParams();
-    const[usersList,setUsersList]=useState([])
+  const history = useNavigate();
 
-    const history =useNavigate()
+  const fetchUSers = async () => {
+    const data = await SearchUsers(username);
+    setUsersList(data.items);
+  };
 
+  const handleClick = (username) => {
+    history(`/user/${username}`);
+  };
 
-    const fetchUSers =async()=>{
-        const data = await SearchUsers(username)
-        setUsersList(data.items);
-    }
+  useEffect(() => {
+    fetchUSers();
+  }, []);
 
-    const handleClick =(username)=>{
-        history(`/user/${username}`)
+  return (
+    <Container>
+      <Box mt={10}>
+        <Typography variant="h6">
+          Resultado de la busqueda de ususario :@{username}
+        </Typography>
+      </Box>
+      <Box>
+        {usersList.length > 0 && usersList.map((user,index)=>(
+            <CustomCard key={index} user={user} handleclick={handleClick}/>
+        )) }
+      </Box>
+    </Container>
+  );
+};
 
-    }
-
-    useEffect(()=>{
-        fetchUSers()
-    },[])
-
-
-    return(
-
-          <Container>
-            <Box mt={10}>
-                <Typography variant="h6">
-                    Resultado de la busqueda de ususario :@{username}
-                </Typography>
-            </Box>
-          </Container>
-
-
-
-    )
-}
+export default Users;

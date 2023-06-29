@@ -27,9 +27,11 @@ const Search = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button variant="contained" fullWidth>
-            Buscar
-          </Button>
+          <Link >
+            <Button variant="contained" fullWidth>
+              Buscar
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </Container>

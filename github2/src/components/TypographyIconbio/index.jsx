@@ -6,6 +6,7 @@ import FlutterDashRoundedIcon from "@mui/icons-material/FlutterDashRounded";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import { Typography } from "@mui/material";
 
+
 const TypographyIconBio = ({text,icon}) => {
   const icons = {
     company: <BusinessRoundedIcon />,
