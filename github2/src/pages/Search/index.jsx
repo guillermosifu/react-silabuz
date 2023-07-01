@@ -13,28 +13,33 @@ const Search = () => {
 
   return (
     <Container
-      maxWidth="sm"
-      sx={{ display: "flex", alignItems: "center", height: "100vh" }}
-    >
-      <Grid container spacing={3}>
-        <h1>Buscando Usuarios</h1>
-        <Grid item xs={12}>
-          <TextField
-            onChange={handleInputChange}
-            label="buscar usuarios Github"
-            value={username}
-            fullWidth
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Link to={`/users/${username}`} >
-            <Button variant="contained" fullWidth>
-              Buscar
-            </Button>
-          </Link>
-        </Grid>
+    maxWidth="sm"
+    sx={{
+      display: "flex",
+      alignItems: "center",
+      height: "100vh",
+    }}
+  >
+    
+    <Grid container spacing={3}>
+      <h1>BUSCANDO USUARIOS</h1>
+      <Grid item xs={12}>
+        <TextField
+          label="Buscar usuario de github"
+          onChange={handleInputChange}
+          value={username}
+          fullWidth
+        />
       </Grid>
-    </Container>
+      <Grid item xs={12}>
+        <Link to={`/users/${username}`} style={{ textDecoration: "none" }}>
+          <Button variant="contained" fullWidth>
+            Buscar
+          </Button>
+        </Link>
+      </Grid>
+    </Grid>
+  </Container>
   );
 };
 

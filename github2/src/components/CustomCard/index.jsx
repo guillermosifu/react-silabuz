@@ -7,17 +7,23 @@ import {
   Typography,
 } from "@mui/material";
 
-const CustomCard = ({ user, handleclick }) => {
+const CustomCard = ({ user, handleClick }) => {
   return (
-    <Box>
+    <Box mt={3}>
       <Card>
         <CardContent>
           <Grid container spacing={3}>
-            <Grid item>
+            <Grid item xs={1}>
               <Avatar src={user.avatar_url} />
             </Grid>
-            <Grid item>
-              <Typography  variant="body" onClick={() => handleclick(user.login)}>
+            <Grid item xs={11}>
+              <Typography
+                sx={{
+                  cursor: "pointer",
+                }}
+                onClick={() => handleClick(user.login)}
+                variant="body1"
+              >
                 {user.login}
               </Typography>
             </Grid>

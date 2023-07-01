@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const AddCategory = ({onNewCategory}) => {
 
-    const [inpuValue, setInpuValue] = useState("")
+    const [inpuValue, setInpuValue] = useState("laptop")
 
     const onInputChange = ({target}) => {
         //RECIBIMOS SIEMRE EL EVENTO

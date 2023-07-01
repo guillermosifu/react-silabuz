@@ -18,7 +18,18 @@ const TypographyIconBio = ({text,icon}) => {
   };
 
   return (
-  <Typography>{icons[icon]}{text}</Typography>)
+    <Typography
+      sx={{
+        display: "flex",
+        alignItems: "center",
+      }}
+      mt={mt}
+      variant="body2"
+    >
+      {icons[icon]}
+      &nbsp;&nbsp; {text}
+    </Typography>
+  );
 };
 
 export default TypographyIconBio;
