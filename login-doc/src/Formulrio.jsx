@@ -31,8 +31,6 @@ const Formulario = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-       
-
         <p>
           <input
             type="text"
@@ -50,10 +48,20 @@ const Formulario = () => {
           />
         </p>
         <p>
-          <input type="text" name="nombre" placeholder="nombre"     onChange={handleInputValues}/>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="nombre"
+            onChange={handleInputValues}
+          />
         </p>
         <p>
-          <input type="text" name="apellido" placeholder="apellido"     onChange={handleInputValues}/>
+          <input
+            type="text"
+            name="apellido"
+            placeholder="apellido"
+            onChange={handleInputValues}
+          />
         </p>
         <p>
           <button type="submit">Inicia sesion</button>
