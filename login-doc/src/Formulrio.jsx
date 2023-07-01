@@ -9,6 +9,8 @@ const Formulario = () => {
     password: "",
   });
 
+  const [textoMostrado, setTextoMostrado] = useState("");
+
   const handleInputValues = (e) => {
     //debemos extraer los datos de input
     //e.target.value
@@ -20,11 +22,16 @@ const Formulario = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const texto = `Email: ${valorInputs.email}\nPassword :${valorInputs.password}`;
+    setTextoMostrado(texto);
+  };
+
   return (
     <div>
-      <form action="">
-        <h4>email {valorInputs.email}</h4>
-        <h5>password {valorInputs.password}</h5>
+      <form onSubmit={handleSubmit}>
+        <h5>{textoMostrado}</h5>
 
         <p>
           <input
@@ -49,7 +56,7 @@ const Formulario = () => {
           <input type="text" name="apellido" placeholder="apellido" />
         </p>
         <p>
-          <button>Inicia sesion</button>
+          <button type="submit">Inicia sesion</button>
         </p>
       </form>
     </div>
