@@ -24,14 +24,14 @@ const Formulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const texto = `Email: ${valorInputs.email}\nPassword :${valorInputs.password}`;
+    const texto = `Email: ${valorInputs.email}\nPassword :${valorInputs.password}\nNombre:${valorInputs.nombre}`;
     setTextoMostrado(texto);
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h5>{textoMostrado}</h5>
+       
 
         <p>
           <input
@@ -50,14 +50,15 @@ const Formulario = () => {
           />
         </p>
         <p>
-          <input type="text" name="nombre" placeholder="nombre" />
+          <input type="text" name="nombre" placeholder="nombre"     onChange={handleInputValues}/>
         </p>
         <p>
-          <input type="text" name="apellido" placeholder="apellido" />
+          <input type="text" name="apellido" placeholder="apellido"     onChange={handleInputValues}/>
         </p>
         <p>
           <button type="submit">Inicia sesion</button>
         </p>
+        <h5>{textoMostrado}</h5>
       </form>
     </div>
   );

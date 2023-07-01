@@ -6,6 +6,6 @@ import Formulario from './Formulrio.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Formulario />
+    <App />
   </React.StrictMode>,
 )
