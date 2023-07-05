@@ -4,9 +4,9 @@ import { Button, Grid, TextField, Card, CardContent } from "@mui/material";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  //  const{user}=useContext(UserContext)
+   const{user,storeUser}=useContext(UserContext)
   const [userData, setUserData] = useState({
-    mail: "",
+    email: "",
     password: "",
   });
 
@@ -25,7 +25,7 @@ const Login = () => {
         apellido:"zapata",
         edad:30,
         dni:45555555
-      }
+      }storeUser(user)
     }
   }
 
