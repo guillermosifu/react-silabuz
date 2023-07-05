@@ -1,19 +1,23 @@
-import { useState,useContext} from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../Context/UserContext";
 import { Button, Grid, TextField, Card, CardContent } from "@mui/material";
-
 
 const Login = () => {
 
-const handleClick =()=>{
-
-}
+  // const{user}=useContext(UserContext)
 
 
+
+
+  const handleClick = () => {};
 
   return (
     <Grid container>
       <Grid item md={6}>
-        <img src="https://www.mundodeportivo.com/alfabeta/hero/2023/06/tras-7-anos-marvel-ha-renovado-su-intro-y-su-logo.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="" />
+        <img
+          src="https://www.mundodeportivo.com/alfabeta/hero/2023/06/tras-7-anos-marvel-ha-renovado-su-intro-y-su-logo.jpg?width=768&aspect_ratio=16:9&format=nowebp"
+          alt=""
+        />
       </Grid>
       <Grid item md={6}>
         <Card>
@@ -29,7 +33,13 @@ const handleClick =()=>{
                 <TextField label="password" fullWidth name="password" />
               </Grid>
               <Grid item md={12}>
-               <Button sx={{backgroundColor:"#000"}} variant="contained" fullWidth >Iniciar Sesion</Button>
+                <Button
+                  sx={{ backgroundColor: "#000" }}
+                  variant="contained"
+                  fullWidth
+                >
+                  Iniciar Sesion
+                </Button>
               </Grid>
             </Grid>
           </CardContent>
