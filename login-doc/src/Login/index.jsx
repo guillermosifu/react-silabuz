@@ -1,15 +1,33 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import { Button, Grid, TextField, Card, CardContent } from "@mui/material";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  //  const{user}=useContext(UserContext)
+  const [userData, setUserData] = useState({
+    mail: "",
+    password: "",
+  });
 
-  // const{user}=useContext(UserContext)
+  const handleClick = (e) => {
+    const{name,value} = e.target
+    setUserData({
+      ...userData,
+      [name]:value
+    })
+  };
 
-
-
-
-  const handleClick = () => {};
+  const handleClickLogin=()=>{
+    if(userData.email === "pepe@gmail.com" && userData.password === "12345678"){
+      const user ={
+        nombre : "pepe",
+        apellido:"zapata",
+        edad:30,
+        dni:45555555
+      }
+    }
+  }
 
   return (
     <Grid container>
