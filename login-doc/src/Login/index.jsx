@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import { Button, Grid, TextField, Card, CardContent } from "@mui/material";
-import Swal from "sweetalert2";
+import swal from "sweetalert2";
 
 const Login = () => {
    const{user,storeUser}=useContext(UserContext)
@@ -25,7 +25,14 @@ const Login = () => {
         apellido:"zapata",
         edad:30,
         dni:45555555
-      }storeUser(user)
+      }
+      storeUser(user)
+    }else{
+      swal.fire({
+        icon:"error",
+        title:"Error",
+        text:"ingreso no valido"
+      })
     }
   }
 
@@ -45,13 +52,14 @@ const Login = () => {
             <p>Estamos aprendiendo Login Rutas</p>
             <Grid container mt={5} spacing={3}>
               <Grid item md={12}>
-                <TextField label="Email" fullWidth name="email" />
+                <TextField label="Email" fullWidth name="email" onChange={handleClick} />
               </Grid>
               <Grid item md={12}>
-                <TextField label="password" fullWidth name="password" />
+                <TextField label="password" fullWidth name="password" onChange={handleClick} />
               </Grid>
               <Grid item md={12}>
                 <Button
+                onClick={handleClickLogin}
                   sx={{ backgroundColor: "#000" }}
                   variant="contained"
                   fullWidth
