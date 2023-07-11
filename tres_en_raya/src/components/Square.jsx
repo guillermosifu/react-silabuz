@@ -1,6 +1,6 @@
 export const Square = ({ children, isSelected, updateBoard, index }) => {
   const handleClick = () => {
-    updateBoard()
+    updateBoard(index)
   }
 
   return (
